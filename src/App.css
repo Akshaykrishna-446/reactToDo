@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #020631;
+  background-color: #000000;
 }
 
 .app {
@@ -20,7 +20,7 @@ body {
 
 .app h1,
 h2 {
-  color: white;
+  color: rgb(236, 253, 0);
 }
 
 .app .input {
@@ -54,6 +54,9 @@ h2 {
   font-weight: 900;
   color: grey;
   margin-right: 5px;
+}
+.todos{
+  padding-left: 0px !important;
 }
 .app .todos {
   display: flex;
