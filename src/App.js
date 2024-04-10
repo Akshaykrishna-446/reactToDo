@@ -3,6 +3,11 @@ import { useState } from "react";
 function App() {
   const [ToDos, setToDos] = useState([])
   const [ToDo, setToDo] = useState("")
+
+  const deleteToDo = (idToDelete) => {
+    setToDos(ToDos.filter((obj) => obj.id !== idToDelete));
+  };
+
   return (
     <div className="app">
       <div className="mainHeading">
@@ -32,24 +37,15 @@ function App() {
                 <p>{obj.text}</p>
               </div>
               <div className="right">
-                <i onClick={(obj)=>{
-                  setToDos(ToDos.filter(obj3=>{
-                    if (obj3.id === obj.id) {
-                      console.log(obj.id)
-                      console.log(obj3.id)
-                    }
-                    return null
-                  })
-                  )
-                }} className="fas fa-times"></i>
+                <i onClick={() => deleteToDo(obj.id)} className="fas fa-times"></i>
               </div>
             </div>
           )
         })}
-        
+
         {ToDos.map((obj) => {
           if (obj.status) {
-            return (<h1>{obj.text}</h1>)
+            return (<h1> completed task : {obj.text}</h1>)
 
           }
           return null
